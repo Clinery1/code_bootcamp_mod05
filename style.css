@@ -11,7 +11,8 @@ textarea {
     resize: none;
     color: #ffffff;
     border-left: 1px solid white;
-    padding: 10px;
+    padding: 4px;
+    margin: 0;
     flex-grow: 4;
     outline: none;
 }
@@ -31,9 +32,12 @@ textarea {
     text-align: center;
     border-radius: 15px;
     background-color : #555;
-    margin: 4px;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 4px;
     display: flex;
     flex-direction: row;
+    height:55px;
 }
 .row {
     white-space: pre-wrap;
@@ -47,7 +51,7 @@ textarea {
     margin:auto;
 }
 .past {
-    background-color: #d3d3d3;
+    background-color: #939393;
     color: white;
 }
 .present {
@@ -58,7 +62,7 @@ textarea {
     background-color: #77dd77;
     color: white;
 }
-.saveBtn {
+.save_btn {
     border: 0px;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -66,7 +70,7 @@ textarea {
     color: white;
     flex-grow: 0.15;
 }
-.saveBtn:hover {
+.save_btn:hover {
     color: black;
     background-color: white;
     transition: all 0.3s ease-in-out;

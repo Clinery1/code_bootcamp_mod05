@@ -1,5 +1,5 @@
 function Planner(save_name) {
-    if (save_name===null||save_name===undefined) {
+    if (typeof save_name!=="string") {
         save_name="planner";
     }
     let raw_hours=localStorage.getItem(save_name);
@@ -8,26 +8,31 @@ function Planner(save_name) {
         raw_hours="[]";
     }
     let hours=JSON.parse(raw_hours);
-    if (hours.length!==24) {
+    if (hours.length!==24||hours===undefined||hours===null) {
         hours=["","","","","","","","","","","","","","","","","","","","","","","",""];
+    }
+    for (let i=0;i<24;i+=1) {
+        if (typeof hours[i]!=="string") {
+            hours[i]="";
+        }
     }
     return {
         save_name:save_name,
         // 24 hours of empty plans
         hours:hours,
-        clear:()=>{
+        clear:function() {
             for (let i=0;i<24;i+=1) {
                 this.hours[i]="";
             }
         },
-        set:(hour,string)=>{
+        set:function(hour,string) {
             this.hours[hour]=string;
         },
-        get:(hour)=>{
+        get:function(hour) {
             return this.hours[hour];
         },
-        save:()=>{
-            let raw_hours=JSON.toString(this.hours);
+        save:function() {
+            let raw_hours=JSON.stringify(this.hours);
             localStorage.setItem(this.save_name,raw_hours);
         },
     };

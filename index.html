@@ -13,6 +13,7 @@
             rel="stylesheet"
         >
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="analog_clock.css">
         <title>Work Day Scheduler</title>
     </head>
     <body>
@@ -20,6 +21,15 @@
             <h1 class="display-3">Work Day Scheduler</h1>
             <p class="lead">A simple calendar app for scheduling your work day</p>
             <p id="currentDay" class="lead"></p>
+            <div class="analogClock" style="width:100px;height:100px">
+                <!-- Regular hour hand -->
+                <!-- <div class="hour"></div> -->
+                <!-- <div class="am_pm"></div> -->
+                <!-- 24 hour hand and dial -->
+                <div class="hour24"></div>
+                <div class="minute"></div>
+                <div class="second"></div>
+            </div>
         </header>
         <div id="container">
             <!-- Timeblocks go here -->
@@ -29,6 +39,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
         <script src="planner.js"></script>
+        <script src="analog_clock.js"></script>
         <script src="script.js"></script>
     </body>
 </html>
